@@ -18,7 +18,17 @@ return new class extends Migration
             $table->text('description');
             $table->decimal('price', 8, 2);
             $table->integer('quantity');
+            $table->string('company');
+            $table->enum('accepted', ['accepted', 'rejected', 'pending'])->default('pending');
+            $table->decimal('priceAfterDiscount', 8, 2)->nullable();
+            $table->decimal('DiscountPercentage', 5, 2)->nullable();
+            $table->boolean('availability')->default(true);
+         // Media
+        $table->string( 'item_image');
+        $table->json( 'details_image');
+
             $table->timestamps();
+
         });
     }
 

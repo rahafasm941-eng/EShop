@@ -26,6 +26,13 @@ class UpdateItemRequest extends FormRequest
             'description' => 'sometimes|string',
             'price' => 'sometimes|numeric|min:0',
             'quantity' => 'sometimes|integer|min:0',
+            'discountPercentage' => 'sometimes|numeric|min:0|max:100',
+            'priceAfterDiscount' => 'sometimes|numeric|min:0',
+            'availability' => 'sometimes|boolean',
+            'item_image' => 'sometimes|image|mimes:png,jpg,jpeg|max:2048',
+            'details_image' => 'sometimes|array',
+            'details_image.*' => 'image|mimes:png,jpg,jpeg|max:2048',
+            
         ];
     }
 }

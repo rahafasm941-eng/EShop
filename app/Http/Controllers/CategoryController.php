@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $category=Category::create($request->validated());
         return response()->json($category,201);
     }
-public function show($id)
+    public function show($id)
     {
         $category=Category::findOrFail($id);
         return response()->json($category,200);
@@ -36,5 +36,5 @@ public function show($id)
         $category=Category::findOrFail($id);
         $category->delete();
         return response()->json(null,204);
-}
+    }
 }
